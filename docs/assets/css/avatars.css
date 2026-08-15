@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+  }
+  
+  body {
+    background: #0e0e0e;
+    color: #f2f2f2;
+    line-height: 1.6;
+  }
+  
+  /* HERO */
+  .hero {
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #bbb;
+  }
+
+  /* AUTOMATION */
+  .automation {
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .automation h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .automation p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #bbb;
+  }
+  
+  .automation .influencer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .automation .media {
+    flex: 1 1 280px;
+    max-width: 350px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .automation .media img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: contain;
+    display: block;
+  }
+  
+  /* INFLUENCER */
+  .influencer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 60px 20px;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .media img,
+  .media video {
+    width: 320px;
+    border-radius: 12px;
+  }
+  
+  .info {
+    max-width: 500px;
+  }
+  
+  .info h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .story {
+    color: #ccc;
+  }
+  
+  /* GALERÍA */
+  .gallery {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .gallery h2 {
+    margin-bottom: 30px;
+  }
+  
+  .carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .carousel {
+    overflow: hidden;
+    border-radius: 12px;
+    background: #1a1a1a;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+  }
+  
+  .carousel-slide img,
+  .carousel-slide video {
+    /* width: 100%; */
+    height: auto;
+    /* display: block; */
+    border-radius: 12px;
+    object-fit: cover;
+    max-height: 600px;
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+  
+  .carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }
+  
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .carousel-dot.active {
+    background: #fff;
+    transform: scale(1.2);
+  }
+  
+  .carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* CONTACTO */
+  .contact {
+    padding: 60px 20px;
+    text-align: center;
+    color: #aaa;
+  }
+  
+  .contact a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #444;
+    padding: 10px 20px;
+    border-radius: 6px;
+  }
+  
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 768px) {
+    .automation h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    
+    .automation .influencer {
+      gap: 20px;
+      padding: 30px 15px;
+    }
+    
+    .automation .media {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+    
+    .automation .media img {
+      max-width: 100%;
+    }
+    
+    .hero h1,
+    .automation h1 {
+      font-size: 1.8rem;
+    }
+    
+    .influencer {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .media img,
+    .media video {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .automation .influencer {
+      gap: 15px;
+      padding: 20px 10px;
+    }
+    
+    .automation h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+  }
+  
