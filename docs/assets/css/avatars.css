@@ -98,6 +98,10 @@
     font-size: 2rem;
     margin-bottom: 10px;
   }
+
+  .info li a {
+    color: white;
+  }
   
   .story {
     color: #ccc;
