@@ -119,7 +119,6 @@
   
   .carousel-container {
     position: relative;
-    width: 100%;
     max-width: 800px;
     margin: auto;
   }
@@ -142,61 +141,12 @@
   
   .carousel-slide img,
   .carousel-slide video {
-    width: 100%;
-    max-width: 100%;
+    /* width: 100%; */
     height: auto;
-    display: block;
+    /* display: block; */
     border-radius: 12px;
     object-fit: cover;
     max-height: 600px;
-  }
-
-  .carousel-slide img {
-    cursor: zoom-in;
-  }
-
-  .image-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    display: grid;
-    place-items: center;
-    padding: 24px;
-    background: rgba(0, 0, 0, 0.9);
-  }
-
-  .image-modal[hidden] {
-    display: none;
-  }
-
-  .image-modal img {
-    display: block;
-    width: auto;
-    max-width: min(1100px, 100%);
-    max-height: calc(100vh - 48px);
-    object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  }
-
-  .image-modal-close {
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    width: 44px;
-    height: 44px;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.12);
-    color: #fff;
-    font-size: 2rem;
-    line-height: 1;
-    cursor: pointer;
-  }
-
-  .image-modal-close:hover,
-  .image-modal-close:focus-visible {
-    background: rgba(255, 255, 255, 0.25);
   }
   
   .carousel-btn {
@@ -311,32 +261,6 @@
   }
   
   @media (max-width: 480px) {
-    .gallery {
-      padding: 40px 12px;
-    }
-
-    .carousel-btn {
-      width: 40px;
-      height: 40px;
-      font-size: 1.6rem;
-    }
-
-    .carousel-btn.prev {
-      left: 6px;
-    }
-
-    .carousel-btn.next {
-      right: 6px;
-    }
-
-    .image-modal {
-      padding: 16px;
-    }
-
-    .image-modal img {
-      max-height: calc(100vh - 32px);
-    }
-
     .automation .influencer {
       gap: 15px;
       padding: 20px 10px;
