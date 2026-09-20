@@ -119,6 +119,7 @@
   
   .carousel-container {
     position: relative;
+    width: 100%;
     max-width: 800px;
     margin: auto;
   }
@@ -141,9 +142,10 @@
   
   .carousel-slide img,
   .carousel-slide video {
-    /* width: 100%; */
+    width: 100%;
+    max-width: 100%;
     height: auto;
-    /* display: block; */
+    display: block;
     border-radius: 12px;
     object-fit: cover;
     max-height: 600px;
@@ -261,6 +263,24 @@
   }
   
   @media (max-width: 480px) {
+    .gallery {
+      padding: 40px 12px;
+    }
+
+    .carousel-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 1.6rem;
+    }
+
+    .carousel-btn.prev {
+      left: 6px;
+    }
+
+    .carousel-btn.next {
+      right: 6px;
+    }
+
     .automation .influencer {
       gap: 15px;
       padding: 20px 10px;
