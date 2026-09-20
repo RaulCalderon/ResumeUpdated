@@ -1,16 +1,63 @@
 // Inicializar todos los carruseles
 document.addEventListener('DOMContentLoaded', function() {
     const carouselContainers = document.querySelectorAll('.carousel-container');
+    const imageModal = document.querySelector('.image-modal');
+    const modalImage = imageModal.querySelector('.image-modal-image');
+    const modalClose = imageModal.querySelector('.image-modal-close');
+    const modalPrevious = imageModal.querySelector('.image-modal-previous');
+    const modalNext = imageModal.querySelector('.image-modal-next');
+    let modalImages = [];
+    let modalIndex = 0;
+
+    function showModalImage(index) {
+      modalIndex = (index + modalImages.length) % modalImages.length;
+      const image = modalImages[modalIndex];
+      modalImage.src = image.currentSrc || image.src;
+      modalImage.alt = image.alt;
+    }
+
+    function closeImageModal() {
+      imageModal.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    function openImageModal(images, index) {
+      modalImages = images;
+      showModalImage(index);
+      imageModal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      modalClose.focus();
+    }
+
+    modalClose.addEventListener('click', closeImageModal);
+    modalPrevious.addEventListener('click', () => showModalImage(modalIndex - 1));
+    modalNext.addEventListener('click', () => showModalImage(modalIndex + 1));
+
+    imageModal.addEventListener('click', (event) => {
+      if (event.target === imageModal) closeImageModal();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (imageModal.hidden) return;
+      if (event.key === 'Escape') closeImageModal();
+      if (event.key === 'ArrowLeft') showModalImage(modalIndex - 1);
+      if (event.key === 'ArrowRight') showModalImage(modalIndex + 1);
+    });
     
-    carouselContainers.forEach((container, containerIndex) => {
+    carouselContainers.forEach((container) => {
       const track = container.querySelector('.carousel-track');
       const slides = container.querySelectorAll('.carousel-slide');
       const prevBtn = container.querySelector('.prev');
       const nextBtn = container.querySelector('.next');
       const dotsContainer = container.querySelector('.carousel-dots');
+      const galleryImages = Array.from(container.querySelectorAll('.carousel-slide img'));
       
       let currentSlide = 0;
       const totalSlides = slides.length;
+
+      galleryImages.forEach((image, index) => {
+        image.addEventListener('click', () => openImageModal(galleryImages, index));
+      });
       
       // Crear puntos indicadores
       slides.forEach((_, index) => {

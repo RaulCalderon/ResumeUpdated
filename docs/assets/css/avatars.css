@@ -204,6 +204,76 @@
   .carousel-dot:hover {
     background: rgba(255, 255, 255, 0.6);
   }
+
+  .image-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .image-modal[hidden] {
+    display: none;
+  }
+
+  .image-modal-image {
+    max-width: min(1100px, 100%);
+    max-height: calc(100vh - 48px);
+    object-fit: contain;
+    border-radius: 12px;
+  }
+
+  .image-modal-close,
+  .image-modal-previous,
+  .image-modal-next {
+    position: absolute;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .image-modal-close {
+    top: 16px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .image-modal-previous,
+  .image-modal-next {
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    transform: translateY(-50%);
+  }
+
+  .image-modal-previous {
+    left: 20px;
+  }
+
+  .image-modal-next {
+    right: 20px;
+  }
+
+  .image-modal-close:hover,
+  .image-modal-close:focus-visible,
+  .image-modal-previous:hover,
+  .image-modal-previous:focus-visible,
+  .image-modal-next:hover,
+  .image-modal-next:focus-visible {
+    background: rgba(255, 255, 255, 0.3);
+  }
   
   /* CONTACTO */
   .contact {
@@ -261,6 +331,28 @@
   }
   
   @media (max-width: 480px) {
+    .image-modal {
+      padding: 16px;
+    }
+
+    .image-modal-image {
+      max-height: calc(100vh - 32px);
+    }
+
+    .image-modal-previous,
+    .image-modal-next {
+      width: 40px;
+      height: 40px;
+    }
+
+    .image-modal-previous {
+      left: 8px;
+    }
+
+    .image-modal-next {
+      right: 8px;
+    }
+
     .automation .influencer {
       gap: 15px;
       padding: 20px 10px;
