@@ -231,14 +231,11 @@
   .image-modal-previous,
   .image-modal-next {
     position: absolute;
-    z-index: 2;
-    display: grid;
-    place-items: center;
+    z-index: 1;
     border: 1px solid rgba(255, 255, 255, 0.35);
-    background: rgba(20, 20, 20, 0.8);
+    background: rgba(255, 255, 255, 0.14);
     color: #fff;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
   }
 
   .image-modal-close {
@@ -339,24 +336,21 @@
     }
 
     .image-modal-image {
-      width: calc(100% - 80px);
       max-height: calc(100vh - 32px);
     }
 
     .image-modal-previous,
     .image-modal-next {
-      top: 50%;
       width: 40px;
       height: 40px;
-      font-size: 1.8rem;
     }
 
     .image-modal-previous {
-      left: 12px;
+      left: 8px;
     }
 
     .image-modal-next {
-      right: 12px;
+      right: 8px;
     }
 
     .automation .influencer {
